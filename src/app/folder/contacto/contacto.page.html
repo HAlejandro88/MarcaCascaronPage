@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>contacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="conteiner">
+    <div class="card">
+     <h2>Dejanos tus datos</h2>
+    <form id=formId (ngSubmit)="enviarCorreo()" #refForm="ngForm">
+       <ion-item>
+         <ion-label>Nombre</ion-label>
+         <ion-input type="text"></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-label>Correo</ion-label>
+         <ion-input type="email"></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-label>Comentarios</ion-label>
+         <ion-textarea></ion-textarea>
+       </ion-item>
+       <ion-button type="submit" expand="block" fill="clear" shape="round">
+         Enviar
+       </ion-button>
+     </form>
+    </div>
+  </div>
+</ion-content>
