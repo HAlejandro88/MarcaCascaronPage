@@ -1,5 +1,7 @@
 {
   "name": "page-marcas",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -7,25 +7,32 @@
 <ion-content>
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="6">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugit ab tenetur corporis illum error incidunt labore nesciunt! Vel debitis vero repudiandae assumenda consequatur error corporis nulla expedita esse recusandae!</p>
+      <ion-col size="12" sizeMd="6" sizeLg="4" size-sm="12">
+        <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugit ab tenetur corporis illum error incidunt labore nesciunt! Vel debitis vero repudiandae assumenda consequatur error corporis nulla expedita esse recusandae!</p>
       </ion-col>
-      <ion-col size="6">
-        <img src="" alt="imagen nosotros">
+      <ion-col size="12" sizeMd="6" sizeLg="4" size-sm="12">
+        <img src="https://blog.aulaformativa.com/wp-content/uploads/2016/02/pautas-texto-publicitario-pagina-nosotros-informacion-empresa.jpg" alt="imagen nosotros">
       </ion-col>
     </ion-row>
     <ion-row>
-      <h2>Ultimos Productos</h2>
-      <ion-col size="6">
+      <ion-col size="12" sizeMd="6" sizeLg="4" size-sm="12" *ngFor="let g of productos" >
         <ion-card>
+          <ion-card-header>
+            <img
+                style="width: 50%; margin: auto; display: block;"
+                class="ion-padding"
+                src="{{g.imagen}}"
+              />
+            <ion-card-title>{{g.nombre}}</ion-card-title>
+          </ion-card-header>
           <ion-card-content>
-            Ultimos prpductos
+            {{g.descipcion}}
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="6">
+      <ion-col size="12" sizeMd="6" sizeLg="4" size-sm="12">
         <ion-card>
           <ion-card-header>
             <ion-card-subtitle>subtitulo noticia</ion-card-subtitle>
@@ -39,23 +46,73 @@
     </ion-row>
     <ion-row>
       <ion-col size="12">
-        <h2>Suscripcion newLetter</h2>
-        <form id=formId (ngSubmit)="suscripcion()" #refForm="ngForm">
-          <ion-item>
-            <ion-label>Nombre</ion-label>
-            <ion-input type="text" ></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>Correo</ion-label>
-            <ion-input type="email"></ion-input>
-          </ion-item>
-        </form>
+        <div class="card">
+          <h2>Suscripcion NewsLetter</h2>
+          <form id=formId (ngSubmit)="suscripcion()" #refForm="ngForm">
+            <ion-item>
+              <ion-label position="floating">Nombre</ion-label>
+              <ion-input type="text" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Correo</ion-label>
+              <ion-input type="email"></ion-input>
+            </ion-item>
+            <ion-button type="submit" expand="block" fill="clear" shape="round">
+              subscribir
+            </ion-button>
+          </form>
+        </div>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="12">
-        Contacto
+      <ion-col size="6">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3297.991604238994!2d-99.16126782930151!3d19.445687944680852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8c50818d2b9%3A0x7528be1c92bc013e!2sHermes%20Music%2C%20S.A.%20de%20C.V.!5e0!3m2!1ses-419!2smx!4v1584658229721!5m2!1ses-419!2smx" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </ion-col>
+      <ion-col size="6">
+        <h3>Nuestros Datos</h3>
+        <div>
+          <ion-label>direccion: naranjo 76 Santa María la Ribera México CDMX</ion-label>
+          <ion-label>CP: 06400</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" sizeMd="6" sizeLg="12" size-sm="12">
+        <div class="card">
+          <h2>¡Dejanos tus Datos!</h2>
+          <form id=formId (ngSubmit)="contacto()" #formContacto="ngForm">
+            <ion-item>
+              <ion-label position="floating">Nombre</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Correo</ion-label>
+              <ion-input type="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Comentarios</ion-label>
+              <ion-textarea></ion-textarea>
+            </ion-item>
+            <ion-button type="submit" expand="block" fill="clear" shape="round">
+              Enviar
+            </ion-button>
+          </form>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer  color="primary">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button href="#">
+        <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+      </ion-button>
+      <ion-button href="#">
+        <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Marca</ion-title>
+  </ion-toolbar>
+</ion-footer>
